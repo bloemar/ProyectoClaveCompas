@@ -1,3 +1,6 @@
+/* ======================================================
+   Estilos Globales y de Componentes Existentes
+   ====================================================== */
 html,
 body {
   background: #c63a27;
@@ -6,6 +9,7 @@ body {
   box-sizing: border-box;
   font-family: "Alata", sans-serif;
 }
+
 *,
 *::before,
 *::after {
@@ -32,10 +36,12 @@ header {
   text-decoration: none;
   color: #d9c6b0;
 }
+
 .logo img {
   height: 40px;
   margin-right: 10px;
 }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -43,10 +49,12 @@ nav ul {
   margin: 0;
   padding: 0;
 }
+
 nav a {
   color: #d9c6b0;
   text-decoration: none;
 }
+
 .auth-buttons button {
   background: #d95a4e;
   color: white;
@@ -55,10 +63,15 @@ nav a {
   border-radius: 5px;
   transition: background 0.3s;
   font-family: "Alata", sans-serif;
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
+
 .auth-buttons button + button {
   margin-left: 10px;
 }
+
 .auth-buttons button:hover {
   background: #a83221;
 }
@@ -66,6 +79,7 @@ nav a {
 main {
   padding-top: 80px;
 }
+
 /* Sección Hero */
 .hero {
   background-color: #c63a27;
@@ -73,18 +87,22 @@ main {
   padding: 40px 20px;
   text-align: center;
 }
+
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
+
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
+
 .btn-cta {
   background: #d95a4e;
   border: none;
@@ -94,26 +112,31 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
+
 .btn-cta:hover {
   background: #a83221;
 }
+
+/* Sección Categorías */
 .categories-section {
   padding: 20px;
   text-align: center;
   background-color: #d9c6b0;
   color: #8c3a27;
 }
+
 .categories-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
+
 .categories-container {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 0px;
   justify-content: center;
 }
+
 .category-btn {
   font-size: 1rem;
   background: #c63a27;
@@ -127,6 +150,7 @@ main {
   border-radius: 0;
   font-family: "Alata", sans-serif;
 }
+
 .category-btn:hover {
   background: #a83221;
   color: #d9c6b0;
@@ -136,16 +160,19 @@ main {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
 .category-btn:last-of-type {
   border-right: 1px solid #a83221;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
+/* Sección Productos Recomendados */
 .featured-products h2 {
   font-size: 2rem;
   margin-bottom: 40px;
 }
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -153,6 +180,7 @@ main {
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .product-card {
   background: #c63a27;
   border-radius: 5px;
@@ -167,9 +195,11 @@ main {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 .product-card h3 {
   margin: 0 0 10px 0;
 }
+
 .product-card p {
   font-size: 0.9rem;
 }
@@ -181,10 +211,12 @@ main {
   background-color: #d9c6b0;
   color: #0d0d0d;
 }
+
 .random-products h2 {
   font-size: 2rem;
   margin-bottom: 30px;
 }
+
 .random-products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -210,10 +242,12 @@ main {
   z-index: 999;
   font-family: "Alata", sans-serif;
 }
+
 .btn-subir:hover {
   background: #a83221;
 }
-/* Buscador en la sección hero */
+
+/* Buscador en la sección Hero */
 .search-form {
   display: flex;
   justify-content: center;
@@ -247,4 +281,94 @@ main {
 
 .search-btn:hover {
   background: #a83221;
+}
+
+/* ======================================================
+      Media Queries para Responsividad
+      ====================================================== */
+
+/* Para dispositivos con ancho máximo de 768px (tablets y móviles en horizontal) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .search-input {
+    width: 80%;
+    max-width: none;
+  }
+
+  .random-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px;
+  }
+}
+
+/* Para dispositivos con ancho máximo de 480px (móviles pequeños) */
+@media (max-width: 480px) {
+  header {
+    padding: 5px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .auth-buttons {
+    margin-top: 5px;
+  }
+
+  .hero {
+    padding: 20px 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .random-products-grid {
+    grid-template-columns: 1fr;
+    padding: 0 5px;
+  }
 }
